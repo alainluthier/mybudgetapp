@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">My Budget</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">My Budget App</string>
+    <string name="nav_header_subtitle">Manage your money easy</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Add Expense</string>
+    <string name="menu_slideshow">Expenses</string>
+    <string name="amount">Amount</string>
+    <string name="description">Description</string>
+    <string name="save">Save</string>
+    <string name="category">Category</string>
+
+    <string name="selected_item">Selected item:</string>
+    <string name="other">Other</string>
+    <string name="total_expenses">Total Expenses:</string>
+</resources>
