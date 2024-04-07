@@ -4,7 +4,9 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import android.content.Context
 import android.content.ContentValues
+import android.util.Log
 import java.text.SimpleDateFormat
+import java.util.Date
 
 class DBHandler(context: Context, name: String?,
        factory: SQLiteDatabase.CursorFactory?, version: Int) :
@@ -32,6 +34,7 @@ class DBHandler(context: Context, name: String?,
         values.put(COLUMN_AMOUNT, expense.amount)
         values.put(COLUMN_DESCRIPTION, expense.description)
         values.put(COLUMN_CATEGORY, expense.category)
+        values.put(COLUMN_CREATED_AT,expense.created.time)
         val db = this.writableDatabase
         db.insert(TABLE_EXPENSES, null, values)
         db.close()
@@ -51,23 +54,24 @@ class DBHandler(context: Context, name: String?,
     }
     @SuppressLint("SimpleDateFormat")
     fun getAllExpenses(): List<Expense> {
-        val formatter = SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
+        val formatter = SimpleDateFormat("yyyy-MM-dd")
         val query =
             "SELECT * FROM $TABLE_EXPENSES"
 
         val db = this.writableDatabase
         val cursor = db.rawQuery(query, null)
         val list = mutableListOf<Expense>();
-        if (cursor.moveToFirst()) {
-            cursor.moveToFirst()
+        while (cursor.moveToNext()) {
+
             val id = Integer.parseInt(cursor.getString(0))
             val amount = cursor.getFloat(1)
-            val created = formatter.parse(cursor.getString(2))
+            val created =  Date(cursor.getLong(2))
             val description = cursor.getString(3)
             val category = cursor.getString(4)
             list.add(Expense(id, amount, created,description, category))
-            cursor.close()
+
         }
+        cursor.close()
         db.close()
         return list
     }

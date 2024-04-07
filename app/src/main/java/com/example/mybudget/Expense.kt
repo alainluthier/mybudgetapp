@@ -5,7 +5,7 @@ import java.util.Date
 class Expense {
     var id: Int=0
     var amount: Float=0F
-    var created: Date? = null
+    var created: Date = Date()
     var description: String? = ""
     var category: String? = ""
     constructor(id:Int, amount: Float, created:Date, description: String, category: String){
