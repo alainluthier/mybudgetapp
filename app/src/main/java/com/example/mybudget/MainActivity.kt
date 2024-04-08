@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContentView(R.layout.fragment_gallery)
+        setContentView(R.layout.fragment_add_expense)
         val autoTextView: AutoCompleteTextView = findViewById(R.id.autoCategory)
         val adapter: ArrayAdapter<String> = ArrayAdapter<String>(this,
             android.R.layout.select_dialog_item, fruits)

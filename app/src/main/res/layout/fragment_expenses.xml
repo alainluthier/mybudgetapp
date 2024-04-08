@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.slideshow.SlideshowFragment">
+    tools:context=".ui.expenses.ExpensesFragment">
 
     <TableLayout
         android:id="@+id/table"
@@ -14,7 +14,7 @@
         android:paddingLeft="5dp"
         android:paddingRight="5dp">
 
-        <TableRow android:background="#51B435" android:padding="10dp">
+        <TableRow android:background="@color/design_default_color_secondary" android:padding="10dp">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

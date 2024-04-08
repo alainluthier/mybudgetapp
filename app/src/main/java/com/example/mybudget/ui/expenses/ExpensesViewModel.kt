@@ -1,13 +1,13 @@
-package com.example.mybudget.ui.slideshow
+package com.example.mybudget.ui.expenses
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class SlideshowViewModel : ViewModel() {
+class ExpensesViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is slideshow Fragment"
+        value = "This is expenses Fragment"
     }
     val text: LiveData<String> = _text
 }

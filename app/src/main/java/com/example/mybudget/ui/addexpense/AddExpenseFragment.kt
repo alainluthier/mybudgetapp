@@ -1,4 +1,4 @@
-package com.example.mybudget.ui.gallery
+package com.example.mybudget.ui.addexpense
 
 
 import android.os.Bundle
@@ -14,11 +14,11 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.mybudget.DBHandler
 import com.example.mybudget.Expense
-import com.example.mybudget.databinding.FragmentGalleryBinding
+import com.example.mybudget.databinding.FragmentAddExpenseBinding
 
-class GalleryFragment : Fragment() {
+class AddExpenseFragment : Fragment() {
 
-    private var _binding: FragmentGalleryBinding? = null
+    private var _binding: FragmentAddExpenseBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -29,10 +29,10 @@ class GalleryFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val galleryViewModel =
-            ViewModelProvider(this).get(GalleryViewModel::class.java)
+        val addExpenseViewModel =
+            ViewModelProvider(this).get(AddExpenseViewModel::class.java)
 
-        _binding = FragmentGalleryBinding.inflate(inflater, container, false)
+        _binding = FragmentAddExpenseBinding.inflate(inflater, container, false)
         val root: View = binding.root
         val category = binding.autoCategory
         val adapter: ArrayAdapter<String> = ArrayAdapter<String>(requireContext(),
